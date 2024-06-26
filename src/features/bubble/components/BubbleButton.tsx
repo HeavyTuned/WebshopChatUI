@@ -67,7 +67,6 @@ export const BubbleButton = (props: Props) => {
 
   document.addEventListener('toggleChatbot', handleButtonClick);
 
-
   return (
     <Show when={!isSmallScreen() || !props.isBotOpened} keyed>
       <button
