@@ -65,12 +65,16 @@ export const BubbleButton = (props: Props) => {
     }
   };
 
+  document.addEventListener('toggleChatbot', handleButtonClick);
+
+
   return (
     <Show when={!isSmallScreen() || !props.isBotOpened} keyed>
       <button
         part="button"
         onClick={handleButtonClick}
         onMouseDown={onMouseDown}
+        id="bubble-button-flowise"
         class={`fixed shadow-md rounded-full hover:scale-110 active:scale-95 transition-transform duration-200 flex justify-center items-center animate-fade-in`}
         style={{
           'background-color': props.backgroundColor ?? defaultButtonColor,
