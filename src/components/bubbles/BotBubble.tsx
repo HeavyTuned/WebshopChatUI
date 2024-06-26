@@ -22,6 +22,7 @@ type Props = {
   feedbackColor?: string;
   isLoading: boolean;
   showAgentMessages?: boolean;
+  starterPrompts?: string[];
 };
 
 const defaultBackgroundColor = '#f7f8ff';

@@ -4,6 +4,7 @@ declare const chatbot: {
         apiHost?: string | undefined;
         chatflowConfig?: Record<string, unknown> | undefined;
         observersConfig?: import("./components/Bot").observersConfigType | undefined;
+        starterPrompts?: string[] | undefined;
     } & {
         id?: string | undefined;
     }) => void;
@@ -12,6 +13,7 @@ declare const chatbot: {
         apiHost?: string | undefined;
         chatflowConfig?: Record<string, unknown> | undefined;
         observersConfig?: import("./components/Bot").observersConfigType | undefined;
+        starterPrompts?: string[] | undefined;
     }) => void;
     destroy: () => void;
 };

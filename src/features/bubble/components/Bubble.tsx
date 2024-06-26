@@ -13,7 +13,6 @@ export type BubbleProps = BotProps & BubbleParams;
 
 export const Bubble = (props: BubbleProps) => {
   const [bubbleProps] = splitProps(props, ['theme']);
-
   const [isBotOpened, setIsBotOpened] = createSignal(false);
   const [isBotStarted, setIsBotStarted] = createSignal(false);
   const [buttonPosition, setButtonPosition] = createSignal({
@@ -133,6 +132,7 @@ export const Bubble = (props: BubbleProps) => {
               chatflowConfig={props.chatflowConfig}
               apiHost={props.apiHost}
               observersConfig={props.observersConfig}
+              starterPrompts={props.starterPrompts}
             />
           </div>
         </Show>

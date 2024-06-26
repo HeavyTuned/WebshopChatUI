@@ -590,8 +590,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
     if (result.data) {
       const chatbotConfig = result.data;
-      const prompts: string[] = [];
-      console.log(props);
+      let prompts: string[] = [];
+
       if (chatbotConfig.starterPrompts) {
         Object.getOwnPropertyNames(chatbotConfig.starterPrompts).forEach((key) => {
           prompts.push(chatbotConfig.starterPrompts[key].prompt);
@@ -600,6 +600,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
       if (props.starterPrompts) {
         prompts.push(...props.starterPrompts);
+        //remove duplicate prompts
+        prompts = Array.from(new Set(prompts));
       }
 
       if (prompts.length > 0) {

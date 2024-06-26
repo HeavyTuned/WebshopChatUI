@@ -14,6 +14,7 @@ type Props = {
     feedbackColor?: string;
     isLoading: boolean;
     showAgentMessages?: boolean;
+    starterPrompts?: string[];
 };
 export declare const BotBubble: (props: Props) => import("solid-js").JSX.Element;
 export {};

@@ -6,6 +6,7 @@ type BotProps = {
   apiHost?: string;
   chatflowConfig?: Record<string, unknown>;
   observersConfig?: observersConfigType;
+  starterPrompts?: string[];
 };
 
 let elementUsed: Element | undefined;
