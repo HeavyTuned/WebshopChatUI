@@ -79,6 +79,7 @@ export type BotProps = {
   chatflowid: string;
   apiHost?: string;
   chatflowConfig?: Record<string, unknown>;
+  starterPrompts?: string[];
   welcomeMessage?: string;
   errorMessage?: string;
   botMessage?: BotMessageTheme;
@@ -589,13 +590,23 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
     if (result.data) {
       const chatbotConfig = result.data;
+      const prompts: string[] = [];
+
       if (chatbotConfig.starterPrompts) {
-        const prompts: string[] = [];
         Object.getOwnPropertyNames(chatbotConfig.starterPrompts).forEach((key) => {
           prompts.push(chatbotConfig.starterPrompts[key].prompt);
         });
+        
+      }
+
+      if(props.starterPrompts) {
+        prompts.push(...props.starterPrompts);
+      }
+
+      if(prompts.length > 0) {
         setStarterPrompts(prompts.filter((prompt) => prompt !== ''));
       }
+
       if (chatbotConfig.chatFeedback) {
         const chatFeedbackStatus = chatbotConfig.chatFeedback.status;
         setChatFeedbackStatus(chatFeedbackStatus);
