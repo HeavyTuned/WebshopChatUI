@@ -463,7 +463,7 @@ button {
   color: var(--tooltip-text-color, white);
   padding: 5px 10px;
   border-radius: 5px;
-  z-index: 42424242;
+  z-index: 1000;
   white-space: pre-wrap;
   word-break: break-word;
   max-width: calc(100vw - 20px);

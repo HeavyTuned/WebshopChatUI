@@ -51,7 +51,6 @@ export function startAudioRecording(
       }
 
       console.error(error);
-
     });
 }
 /** Stop the currently started audio recording & sends it
